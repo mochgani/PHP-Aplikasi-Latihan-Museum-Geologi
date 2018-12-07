@@ -1,0 +1,36 @@
+<!doctype html>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8" />
+			<title></title>
+			<style type="text/css">
+				body{
+					margin:0;
+					padding:0;
+					overflow:hidden;
+				}
+
+			</style>
+		</head>
+		<body>
+			<div style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px;background:#000;color:#fff" id="btn" onclick="launchIntoFullscreen(document.documentElement);"><center><h1>Click Here to open Maps!</h1></center></div>
+ 			<iframe id="abc" src="https://p3d.in/e/VaOTr" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px;display:none;" height="100%" width="100%" frameborder="0" seamless allowfullscreen webkitallowfullscreen></iframe>
+
+ 			<script type="text/javascript">
+ 				function launchIntoFullscreen(element) {
+ 					document.getElementById('btn').style.display = 'none';
+ 					document.getElementById('abc').style.display = 'block';
+
+					if(element.requestFullscreen) {
+					    element.requestFullscreen();
+					} else if(element.mozRequestFullScreen) {
+					    element.mozRequestFullScreen();
+					} else if(element.webkitRequestFullscreen) {
+					    element.webkitRequestFullscreen();
+					} else if(element.msRequestFullscreen) {
+					    element.msRequestFullscreen();
+					}
+				}
+ 			</script>
+		</body>
+	</html>

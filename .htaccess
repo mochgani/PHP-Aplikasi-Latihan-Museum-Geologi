@@ -1,0 +1,32 @@
+RewriteEngine On
+Options +FollowSymLinks
+
+RewriteRule ^login$ login.php [L]
+RewriteRule ^kunjungan$ kunjungan.php [L]
+RewriteRule ^ceklogin$ modul/user/ceklogin.php [L]
+RewriteRule ^simpankunjungan$ modul/pengunjung/simpankunjungan.php [L]
+RewriteRule ^logout$ modul/user/logout.php [L]
+RewriteRule ^index$ index.php [L]
+
+RewriteRule ^api-([A-Za-z0-9-]+)$ api/$1.php [L]
+RewriteRule ^api-([A-Za-z0-9-]+)/$ api/$1.php [L]
+RewriteRule ^api-([A-Za-z0-9-]+)/([A-Za-z0-9-]+)$ api/$1.php?parsing=$2 [L]
+RewriteRule ^api-([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/$ api/$1.php?parsing=$2 [L]
+RewriteRule ^api-([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)$ api/$1.php?parsing=$2&parsing2=$3 [L]
+RewriteRule ^api-([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/$ api/$1.php?parsing=$2&parsing2=$3 [L]
+RewriteRule ^api-([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)$ api/$1.php?parsing=$2&parsing2=$3&parsing3=$4 [L]
+RewriteRule ^api-([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/$ api/$1.php?parsing=$2&parsing2=$3&parsing3=$4 [L]
+
+RewriteRule ^index/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)$ index.php?modul=$1&page=$2 [L]
+RewriteRule ^index/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/$ index.php?modul=$1&page=$2 [L]
+RewriteRule ^index/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([0-9]+)$ index.php?modul=$1&page=$2&hal=$3 [L]
+RewriteRule ^index/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([0-9]+)/$ index.php?modul=$1&page=$2&hal=$3 [L]
+RewriteRule ^index/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([0-9]+)/([0-9]+)$ index.php?modul=$1&page=$2&hal=$3&query=$4 [L]
+RewriteRule ^index/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/([0-9]+)/([0-9]+)/$ index.php?modul=$1&page=$2&hal=$3&query=$4 [L]
+
+<FilesMatch "\.(engine|inc|info|install|make|module|profile|test|po|sh|.*sql|theme|tpl(\.php)?|xtmpl|svn-base)$|^(code-style\.pl|Entries.*|Repository|Root|Tag|Template|all-wcprops|entries|format)$">
+  Order allow,deny
+</FilesMatch>
+
+Options -Indexes
+
